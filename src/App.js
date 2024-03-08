@@ -142,7 +142,7 @@ function App({ menupagedata, menuheader }) {
     <>
       <div className="App">
 
-        <Navbar collapseOnSelect expand={false} className="sticky-top mb-2 shadow-sm" bg="light" data-bs-theme="light">
+        <Navbar collapseOnSelect expand={false} className="sticky-top mb-0 shadow-sm" bg="light" data-bs-theme="light">
           <Container fluid>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`} />
             <Navbar.Brand className="ms-2">
@@ -183,6 +183,14 @@ function App({ menupagedata, menuheader }) {
             </div>
           </Container>
         </Navbar>
+
+        <Nav fill variant="pills" id="day-scroll" className="sticky-top2">
+          {availableDays.map((day) => {
+            return (<>
+              <Nav.Link href={"#"+day}>{day}</Nav.Link> 
+            </>);
+          })}
+        </Nav>
 
         <Container id="infobody2">
           <FilterOptions show_var={showFilterPane} hide_fxn={handleFilterPaneOnHide} param_fxn={dualLink} filterOptions={filterOptions}></FilterOptions>
