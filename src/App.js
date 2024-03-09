@@ -185,9 +185,9 @@ function App({ menupagedata, menuheader }) {
         </Navbar>
 
         <Nav fill variant="pills" id="day-scroll" className="sticky-top2">
-          {availableDays.map((day) => {
+          {[...Array(availableDays.length).keys()].map((day) => {
             return (<>
-              <Nav.Link href={"#"+day}>{day}</Nav.Link> 
+              <Nav.Link href={"#day-event-"+day}>{availableDays[day]}</Nav.Link> 
             </>);
           })}
         </Nav>

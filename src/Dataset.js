@@ -234,6 +234,7 @@ export default function Dataset({mode, param_fxn, appliedFilters, changeDays}) {
 
     let daynum = -1;
     let num_evts_ctr = 0;
+    let newdayctr = 0;
 
     // console.log(jsonexport);
     jsonexport.forEach(function (elem, index_) {
@@ -255,10 +256,11 @@ export default function Dataset({mode, param_fxn, appliedFilters, changeDays}) {
         let formatted_start = startjs.format("dddd, MMMM D").toString();
         // the number of events preceding the day indicator are enscribed into the classname
         output.push(
-          <ListGroup.Item key={formatted_start} className={"text-center day-indicator events-" + num_evts_ctr} id={startjs.format("ddd, M/D").toString()}>
+          <ListGroup.Item key={formatted_start} className={"text-center day-indicator events-" + num_evts_ctr} id={"day-event-"+newdayctr}>
             <p className="mb-0"><b>{formatted_start}</b></p>
           </ListGroup.Item>
         );
+        newdayctr += 1;
         num_evts_ctr = 0;
       }
 
