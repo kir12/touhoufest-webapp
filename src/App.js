@@ -13,6 +13,7 @@ import Dataset from "./Dataset";
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { ScrollSpy } from 'bootstrap';
 
 function App({ menupagedata, menuheader }) {
 
@@ -136,6 +137,11 @@ function App({ menupagedata, menuheader }) {
 
   let rendered_days = availableDays.map((day) => {
     return (<NavDropdown.Item onClick={() => { handleDaySelect(day) }}>{day}</NavDropdown.Item>);
+  });
+
+  const dataSpyList = document.querySelectorAll('[data-bs-spy="scroll"]');
+  dataSpyList.forEach(dataSpyEl => {
+    ScrollSpy.getOrCreateInstance(dataSpyEl).refresh();
   });
 
   return (

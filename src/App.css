@@ -1,6 +1,11 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+};
+
+.hasFilters {
+  background-color: lightgreen;
+  border-radius: 50px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -64,10 +69,13 @@ body {
   height:100%;
 }
 
-.hasFilters {
-  background-color: lightgreen;
-  border-radius: 50px;
+ 
+/*
+body {
+  position: relative;
+  overflow-x: unset
 }
+*/
 
 /*code to push date indicators below the navbar*/
 @supports ((position: -webkit-sticky) or (position: sticky)) {
